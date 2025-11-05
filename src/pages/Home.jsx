@@ -8,10 +8,10 @@ export const Home = () => {
 
   return (
     <Container>
-      <div>Bienvenido Home {user.full_name}</div>
+      <div>Welcome Home {user.full_name}</div>
       <img src={user.picture} alt="" />
 
-      <button onClick={signOut}>Cerrar sesión</button>
+      <button onClick={signOut}>Logout</button>
     </Container>
   )
 }
