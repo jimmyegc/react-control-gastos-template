@@ -4,13 +4,12 @@ import { useAuthStore, UserAuth } from '../index'
 
 export const Home = () => {
   const { signOut } = useAuthStore();
-  const { user } =UserAuth();
+  const { user } = UserAuth();
 
   return (
     <Container>
       <div>Welcome Home {user.full_name}</div>
-      <img src={user.picture} alt="" />
-
+      <img src={user.picture} alt="" width={62} />      
       <button onClick={signOut}>Logout</button>
     </Container>
   )

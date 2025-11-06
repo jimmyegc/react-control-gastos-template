@@ -10,18 +10,17 @@ export const LoginTemplate = () => {
         <span className='version'>versión 1.0</span>
         <div className='contentImg'>
           <img src={v.logo} alt="" />
-        </div>
-      
-      <Titulo>Control de Gastos</Titulo>
-      <p className='frase'>Tome el control de tus 💸 gastos e 💰 ingresos.</p>      
-      <ContainerBtn>
-        <BtnSave 
-          bgcolor={v.colorSecundario}
-          icono={<v.iconogoogle/>}
-          titulo="Iniciar con Google"
-          funcion={signInWithGoogle}
-        />
-      </ContainerBtn>
+        </div>      
+        <Titulo>Control de Gastos</Titulo>
+        <p className='frase'>Tome el control de tus 💸 gastos e 💰 ingresos.</p>      
+        <ContainerBtn>
+          <BtnSave 
+            bgcolor={v.colorSecundario}
+            icono={<v.iconogoogle/>}
+            titulo="Iniciar con Google"
+            funcion={signInWithGoogle}
+          />
+        </ContainerBtn>
       </div>
     </Container>
   )
@@ -45,21 +44,29 @@ const Container = styled.div`
     margin: 20px;
     padding: 20px;
     box-shadow: 8px 5px 18px 3px rgba(0, 0, 0, 0.35);
-  }
-  .version {
-    color: #727272;
-    text-align: start;
-  }
-  .contentImg {
-    img {
-      width: 60%;
-      animation: flotar 1.5s ease-in-out infinite alternate;
+    justify-content:center;
+    width:auto;
+    height:80%;
+
+    .version {
+      color: #727272;
+      text-align: start;
+    }
+    .contentImg {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 60%;
+        animation: flotar 1.5s ease-in-out infinite alternate;
+      }
+    }
+    .frase {
+      color: #909090;
+      font-size: 1.2rem;
     }
   }
-  .frase {
-    color: #909090;
-    font-size: 1.2rem;
-  }
+  
 
   @keyframes flotar {
     0% {

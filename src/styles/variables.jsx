@@ -52,7 +52,7 @@ export const v = {
   bpmarge: `62em`,
   bphomer: `75em`,
   colorPrincipal: `#00F34A`,
-  boxshadowGray: `0px 10px 15px -3px rgba(0,0,0,0.1)`,
+  boxshadowGray: `0px 10px 15px -3px rgba(32, 196, 100, 0.1)`,
   iconoFlechabajo: IoIosArrowDown,
   iconocorona: RiVipCrownFill,
   iconoUser: BiUserCircle,

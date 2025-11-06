@@ -1,5 +1,5 @@
 import {styled } from 'styled-components'
-import { v, LinksArray } from '../../../index'
+import { v, LinksArray, SecondarylinksArray, SidebarCard } from '../../../index'
 import { NavLink } from 'react-router-dom'
 
 export const Sidebar = ({ state, setState }) => {
@@ -29,6 +29,19 @@ export const Sidebar = ({ state, setState }) => {
           </div>
         ))}
         <Divider background={v.bg4} lgSpacing={v.lgSpacing} />
+        {SecondarylinksArray.map(({ icon, label, to })=> (
+          <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
+            <NavLink to={to} 
+              className={({ isActive }) => `Links${isActive?` active`: ``}`}
+            >
+              <div className="LinkIcon">{icon}</div>
+              {state && <span>{label}</span>}
+              
+            </NavLink>
+          </div>
+        ))}
+        <Divider background={v.bg4} lgSpacing={v.lgSpacing} />
+        {state && (<SidebarCard/>)}        
       </Container>
     </Main>
   )
@@ -43,6 +56,10 @@ const Container = styled.div`
   height: 100%;
   width: 65px;
   transition: 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar { width: 8px; }
+  &::-webkit-scrollbar-thumb { background: ${(props) => props.theme.colorScroll}; border-radius: 10px; }
   
   &.active {
     width: 220px;
@@ -135,7 +152,8 @@ const Main = styled.div`
     cursor: pointer;
     transition: all 0.2s;
     z-index: 2;
-    transform: ${({ isOpen}) => (isOpen?`translateX(162px) rotate(3.15rad)`:`initial`) }  
+    transform: ${({ isOpen}) => (isOpen?`translateX(162px) rotate(3.15rad)`:`initial`) };  
+    color: ${(props) => props.theme.text};
   }
 `
 
