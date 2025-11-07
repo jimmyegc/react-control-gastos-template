@@ -6,11 +6,11 @@ export const Sidebar = ({ state, setState }) => {
   const toggleState = () => setState(!state)
 
   return (
-    <Main isOpen={state}>
+    <Main $isOpen={state}>
       <span className='SidebarButton' onClick={toggleState}>
         {<v.iconoflechaderecha/>}
       </span>
-      <Container isOpen={state} className={state?'active':''}>
+      <Container $isOpen={state} className={state?'active':''}>
         <div className='LogoContent'>
           <div className='imgContent'>
             <img src={v.logo} />
@@ -28,7 +28,7 @@ export const Sidebar = ({ state, setState }) => {
             </NavLink>
           </div>
         ))}
-        <Divider background={v.bg4} lgSpacing={v.lgSpacing} />
+        <Divider $background={v.bg4} $lgSpacing={v.lgSpacing} />
         {SecondarylinksArray.map(({ icon, label, to })=> (
           <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
             <NavLink to={to} 
@@ -40,7 +40,7 @@ export const Sidebar = ({ state, setState }) => {
             </NavLink>
           </div>
         ))}
-        <Divider background={v.bg4} lgSpacing={v.lgSpacing} />
+        <Divider $background={v.bg4} $lgSpacing={v.lgSpacing} />
         {state && (<SidebarCard/>)}        
       </Container>
     </Main>
@@ -83,7 +83,7 @@ const Container = styled.div`
       }
     }
     h2 {
-      display: ${({ isOpen }) => (isOpen? `block`:`none`)}
+      display: ${({ $isOpen }) => ($isOpen ? `block` : `none`)};
     }
     @keyframes flotar {
       0% {
@@ -152,7 +152,7 @@ const Main = styled.div`
     cursor: pointer;
     transition: all 0.2s;
     z-index: 2;
-    transform: ${({ isOpen}) => (isOpen?`translateX(162px) rotate(3.15rad)`:`initial`) };  
+    transform: ${({ $isOpen }) => ($isOpen ? `translateX(162px) rotate(3.15rad)` : `initial`) };      
     color: ${(props) => props.theme.text};
   }
 `
@@ -160,6 +160,6 @@ const Main = styled.div`
 const Divider = styled.div`
   height: 1px;
   width: 100%;
-  background: ${(props) => props.theme.bg4};
-  margin:${() => v.lgSpacing} 0;
+  background: ${(props) => props.$background};
+  margin: ${(props) => props.$lgSpacing} 0;
 `

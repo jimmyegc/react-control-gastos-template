@@ -6,7 +6,11 @@ export const ListaMenuDesplegable = ({ data, top, funcion }) => {
   return (
     <Container top={top} >
       {data.map((item, index) => (
-        <ItemDesplegable key={index} item={item} funcion={()=>funcion(item.tipo)} />
+        <ItemDesplegable 
+          key={index} 
+          item={item} 
+          funcion={()=>funcion(item.tipo)} 
+        />        
       ))}      
     </Container>
   )

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const BtnCircular = ({ icono, width, height, bgcolor, textColor, fontsize, translateX, translateY}) => {
   return (
     <Container
-      bgcolor={bgcolor}
+      $bgcolor={bgcolor}
       textColor={textColor}
       height={height}
       width={width}
@@ -19,7 +19,7 @@ export const BtnCircular = ({ icono, width, height, bgcolor, textColor, fontsize
 
 
 const Container = styled.button`
-  background-color: ${(props) => props.bgcolor };
+  background-color: ${(props) => props.$bgcolor };
   min-width: ${(props) => props.width };
   min-height: ${(props) => props.height };
   border-radius: 50%;

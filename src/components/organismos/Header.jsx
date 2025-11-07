@@ -4,9 +4,11 @@ import { ContentHeader, DataUser } from '../../index';
 
 export const Header = ({ stateConfig }) => {
   return (    
-      <ContentHeader>
+    <ContentHeader>
+      <div onClick={(e) => e.stopPropagation()}>
         <DataUser stateConfig={stateConfig} />
-      </ContentHeader>          
+      </div>
+    </ContentHeader>          
   )
 }
 
