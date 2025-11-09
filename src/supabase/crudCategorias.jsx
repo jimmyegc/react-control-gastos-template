@@ -78,7 +78,7 @@ export async function EliminarCategoriasTodas(p) {
     const { error } = await supabase
       .from("categorias")
       .delete()
-      .eq("idusuario", p.idusuario)
+      .eq("id_usuario", p.id_usuario)
     if (error) {
       alert("Error al eliminar", error);
     }

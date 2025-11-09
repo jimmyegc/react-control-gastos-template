@@ -4,8 +4,12 @@ import { LoginTemplate } from '../';
 
 export const Login = () => {
   return (
-    <LoginTemplate/>
+    <Container>
+      <LoginTemplate/>
+    </Container>
   )
 }
 
-const Container = styled.div``;
+const Container = styled.div`  
+  
+`

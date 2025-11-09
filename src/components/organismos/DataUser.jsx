@@ -1,15 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { BiUserCircle } from 'react-icons/bi'
 import { BtnCircular, UserAuth, v, ListaMenuDesplegable, DesplegableUser, useAuthStore } from '../../index'
 
 export const DataUser = ({ stateConfig }) => {
   const { user } = UserAuth();
   const { signOut } = useAuthStore();
+  const navigate = useNavigate()
 
   //console.log("User actual:", user);
 
   const funcionXtipo = async (tipo) => {    
+    if (tipo === 'miperfil') {
+      navigate('/perfil')
+    } else 
     if (tipo === 'cerrarsesion') {
       await signOut();
     }
@@ -42,7 +47,7 @@ export const DataUser = ({ stateConfig }) => {
         <ListaMenuDesplegable 
           data={DesplegableUser}
           top="62px" 
-          funcion={(p) => funcionXtipo(p)}
+          funcion={(p) => funcionXtipo(p.tipo)}
         />
       )}
     </Container>

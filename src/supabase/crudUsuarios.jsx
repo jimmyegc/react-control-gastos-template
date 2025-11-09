@@ -21,9 +21,11 @@ export const MostrarUsuarios = async () => {
       .select()
       .eq("id_auth_supabase", idAuthSupabase)
       .maybeSingle()      
-    if(error) {
-      alert("EditarTemaMonedaUser", error)
-    }    
+
+/*     if(error) {
+      alert("MostrarUsuarios", error)
+    } */    
+    
     if(data) {
       return data
     }

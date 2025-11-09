@@ -1,5 +1,5 @@
-
-export function ConvertirCapitalize(input) {
-  return (input.charAt(0).toUpperCase()+input.slice(1).toLowerCase());
-
+export function ConvertirCapitalize(input = "") {
+  if (typeof input !== "string" || !input.trim()) return "";
+  const str = input.trim();
+  return str[0].toUpperCase() + str.slice(1).toLowerCase();
 }

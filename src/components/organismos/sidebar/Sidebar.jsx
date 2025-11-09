@@ -1,8 +1,16 @@
 import {styled } from 'styled-components'
-import { v, LinksArray, SecondarylinksArray, SidebarCard } from '../../../index'
 import { NavLink } from 'react-router-dom'
+import { 
+  v, 
+  LinksArray, 
+  SecondarylinksArray, 
+  SidebarCard,    
+  useThemeContext,
+  KiiroLogo,
+} from '../../../index'
 
-export const Sidebar = ({ state, setState }) => {
+export const Sidebar = ({ state, setState }) => {  
+  const { theme  } = useThemeContext();  
   const toggleState = () => setState(!state)
 
   return (
@@ -13,10 +21,13 @@ export const Sidebar = ({ state, setState }) => {
       <Container $isOpen={state} className={state?'active':''}>
         <div className='LogoContent'>
           <div className='imgContent'>
-            <img src={v.logo} />
-          </div>              
-          <h2>Control de Gastos</h2>
-        </div>        
+            <KiiroLogo />            
+          </div>  
+          <div>
+            <h2>Kiiro</h2>             
+            <span>Control de Gastos</span>    
+          </div>                      
+        </div>            
         {LinksArray.map(({ icon, label, to })=> (
           <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
             <NavLink to={to} 
@@ -28,7 +39,7 @@ export const Sidebar = ({ state, setState }) => {
             </NavLink>
           </div>
         ))}
-        <Divider $background={v.bg4} $lgSpacing={v.lgSpacing} />
+        <Divider />
         {SecondarylinksArray.map(({ icon, label, to })=> (
           <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
             <NavLink to={to} 
@@ -40,7 +51,7 @@ export const Sidebar = ({ state, setState }) => {
             </NavLink>
           </div>
         ))}
-        <Divider $background={v.bg4} $lgSpacing={v.lgSpacing} />
+        <Divider />
         {state && (<SidebarCard/>)}        
       </Container>
     </Main>
@@ -69,22 +80,31 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     padding-bottom: 60px;
+    gap: 10px;
+    
     .imgContent {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 30px;
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-      transform: ${({ isOpen }) => (isOpen?`scale(0.7)`:`scale(1.5)`)} rotate(${({ theme }) => theme.logorotate});
+      width: 48px;      
+      transition: all 0.35s ease;
+      transform: ${({ $isOpen }) => ($isOpen?`scale(0.95)`:`scale(1.5)`)} rotate(${({ theme }) => theme.logorotate});
+      
       img {
         width: 100%;
         animation: flotar 1.7s ease-in-out infinite alternate;
       }
     }
-    h2 {
+
+    h2, span {
       display: ${({ $isOpen }) => ($isOpen ? `block` : `none`)};
     }
+
+    span {
+      font-size: 0.85rem;
+      padding-top: 1px;
+    }
+    
     @keyframes flotar {
       0% {
         transform: translate(0, 0px);
@@ -160,6 +180,6 @@ const Main = styled.div`
 const Divider = styled.div`
   height: 1px;
   width: 100%;
-  background: ${(props) => props.$background};
-  margin: ${(props) => props.$lgSpacing} 0;
-`
+  background: ${(props) => props.theme.bg4};
+  margin: ${() => v.lgSpacing} 0;
+`;

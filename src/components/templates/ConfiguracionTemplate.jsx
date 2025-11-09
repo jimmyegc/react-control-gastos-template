@@ -8,7 +8,8 @@ import {
   useUsuariosStore, 
   ListaGenerica, 
   TemasData, 
-  BtnSave
+  BtnSave,
+  CardEliminarData
 } from '../../index'
 
 export const ConfiguracionTemplate = () => {
@@ -79,6 +80,7 @@ export const ConfiguracionTemplate = () => {
               data={TemasData}
               setState={() => setStateListaTemas(!stateListaTemas)}
               funcion={setSelectTema}
+              bottom="-20px"
             />
           )}          
         </ContentCard>
@@ -88,15 +90,16 @@ export const ConfiguracionTemplate = () => {
           icono={<v.iconoguardar/>}
           funcion={editar}
         />
+        <CardEliminarData />
       </section>
     </Container>
   )
 }
 
 const Container = styled.div`
-  min-height: 100vh;
-  padding: 15px;
   width: 100%;
+  min-height: 100vh;
+  padding: 15px;  
   background: ${({ theme}) => theme.bgtotal };
   color: ${({ theme}) => theme.text }; 
   display: grid;
@@ -127,9 +130,10 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: start;
     gap: 30px;
-    align-self: center;
+    /* align-self: center; */
+    
     h1 { 
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   }
 /*   .main {

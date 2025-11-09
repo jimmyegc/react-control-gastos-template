@@ -5,7 +5,7 @@ export const LoginTemplate = () => {
   const { signInWithGoogle } = useAuthStore()
 
   return (
-    <Container imagenfondo={v.imagenfondo}>
+    <Container $imagenfondo={v.imagenfondo}>
       <div className='contentCard'>
         <span className='version'>versión 1.0</span>
         <div className='contentImg'>
@@ -27,14 +27,16 @@ export const LoginTemplate = () => {
 }
 
 const Container = styled.div`
-  background-image: url(${(props) => props.imagenfondo});
+  background-image: url(${(props) => props.$imagenfondo});
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.87);
+
   .contentCard {
     background-color: #131313;
     border-radius: 20px;
@@ -45,8 +47,8 @@ const Container = styled.div`
     padding: 20px;
     box-shadow: 8px 5px 18px 3px rgba(0, 0, 0, 0.35);
     justify-content:center;
-    width:auto;
-    height:80%;
+    width: auto;
+    height: 80%;
 
     .version {
       color: #727272;
@@ -57,13 +59,14 @@ const Container = styled.div`
       display: flex;
       justify-content: center;
       img {
-        width: 60%;
+        width: 35%;
         animation: flotar 1.5s ease-in-out infinite alternate;
       }
     }
     .frase {
       color: #909090;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      text-align: center;
     }
   }
   
@@ -82,8 +85,9 @@ const Container = styled.div`
 `;
 
 const Titulo = styled.span`
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  text-align: center;
 `
 
 const ContainerBtn = styled.div`

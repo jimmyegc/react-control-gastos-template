@@ -15,7 +15,7 @@ export const DesplegableUser = [
     tipo: "miperfil",
   },
   {
-    text: "Configuracion",
+    text: "Configuración",
     icono: <v.iconoSettings/>,
     tipo: "configuracion",
   },
@@ -58,12 +58,12 @@ export const DataDesplegableMovimientos = [
 //data SIDEBAR
 export const LinksArray = [
   {
-    label: "Home",
+    label: "Inicio",
     icon: <AiOutlineHome />,
     to: "/",
   },
   {
-    label: "Categorias",
+    label: "Categorías",
     icon: <MdOutlineAnalytics />,
     to: "/categorias",
   },
@@ -92,7 +92,7 @@ export const SecondarylinksArray = [
   {
     label: "Acerca de",
     icon: <TbPig />,
-    to: "/acercade",
+    to: "/",
   },
 ];
 //temas

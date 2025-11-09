@@ -12,7 +12,9 @@ import { TbBrandSupabase } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { BsArrowDown, BsArrowUpShort } from "react-icons/bs";
 import { FaBalanceScale } from "react-icons/fa";
-import logo from "../assets/logocerdo.png";
+import logo from "../assets/logo-app.svg";
+//import logoLight from '../assets/logo-light.svg'
+//import logoDark from '../assets/logo-dark.svg'
 import { BsGoogle } from "react-icons/bs";
 import { RiCloseLine } from "react-icons/ri";
 import { BiSave } from "react-icons/bi";
@@ -26,9 +28,11 @@ import {IoIosArrowForward} from "react-icons/io"
 import fondo from "../assets/fondo1.svg";
 import {GrFormPrevious,GrCaretNext} from "react-icons/gr"
 import {MdOutlineBorderAll} from "react-icons/md"
+
 export const v = {
   sidebarWidth: `300px`,
   sidebarWidthInitial: `10vw`,
+  xsSpacing: `4px`,
   smSpacing: `8px`,
   mdSpacing: `16px`,
   lgSpacing: `24px`,
@@ -67,7 +71,7 @@ export const v = {
   flechaabajolarga: BsArrowDown,
   flechaarribalarga: BsArrowUpShort,
   balance: FaBalanceScale,
-  logo: logo,
+  logo: logo,  
   iconogoogle: BsGoogle,
   iconocerrar: RiCloseLine,
   iconoguardar: BiSave,
@@ -84,5 +88,6 @@ export const v = {
   rgbafondos:"rgba(210, 110, 249, 0.1)",
   iconoprev:GrFormPrevious,
   icononext:GrCaretNext,
-  iconotodos:MdOutlineBorderAll
+  iconotodos:MdOutlineBorderAll,
+  
 };

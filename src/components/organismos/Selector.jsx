@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import {v} from "../../index"
+import {
+  v
+} from "../../index"
 
 export function Selector({ color, state, funcion, texto1, texto2 }) {
   

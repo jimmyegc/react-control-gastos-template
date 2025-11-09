@@ -1,5 +1,6 @@
+
 export const Light ={
-     rgbafondoanimado:"rgba(102, 102, 102, 0.2)",
+    rgbafondoanimado:"rgba(102, 102, 102, 0.2)",
     body: "#fff",  
     text: "#202020",
     bodyRgba: "255, 255, 255",
@@ -23,7 +24,7 @@ export const Light ={
     primary: "rgb(52, 131, 235)",
     bg4:"#eaeaea",
     bg5:"#9046FF",
-    bgtotal:"#EDF3FB",
+    bgtotal: "#EDF3FB",
     bgtgderecha:"#eeeeee",
     colorToggle:"#F9743B",
     translateToggle:"-12px",
@@ -32,9 +33,15 @@ export const Light ={
     slideroffset:"0.3em",
     sizeoficon:"1.4em",
     colorSubtitle:"#2c2c2c",
-    colorScroll:"#cac9ca"
-
+    colorScroll:"#cac9ca",
+    logo: {
+        logoFill: "#f9c0c0",
+        pigFill: "#ffb6c1",
+        coinFill: "#fff",
+        stroke: "#1a1a1a",
+    },
 }
+
 export const Dark = {
     rgbafondoanimado:"rgba(198, 198, 198, 0.2)",
     bgtgderecha:"#21252B",
@@ -61,7 +68,7 @@ export const Dark = {
     primary: "rgb(52, 131, 235)",
     bg4:"#4E4E50",
     bg5:"#BF94FF",
-    bgtotal:"#1C1C1E",
+    bgtotal: "#1C1C1E",
     colorToggle:"rgb(52, 131, 235)",
     translateToggle:"26px",
    
@@ -69,5 +76,11 @@ export const Dark = {
     slideroffset:"0.3em",
     sizeoficon:"1.4em",
     colorSubtitle:"#b7b7b7",
-    colorScroll:"#434343"
+    colorScroll:"#434343",
+    logo: {
+        logoFill: "#1a1a1a",
+        pigFill: "#4ade80",
+        coinFill: "#d9f99d",
+        stroke: "#f1f1f1",
+    },
   };

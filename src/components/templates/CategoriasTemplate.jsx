@@ -8,16 +8,23 @@ import {
   ListaMenuDesplegable,
   DataDesplegableTipo,
   BtnFiltro,
-  v
+  v,
+  TablaCategorias,
+  RegistrarCategorias,
+  LottieAnimacion,
 } from '../../index'
 
-export const CategoriasTemplate = () => {
+import vacioverde from "../../assets/vacioverde.json";
+import vaciorojo from "../../assets/vaciorojo.json";
+
+export const CategoriasTemplate = ({ data }) => {
+
   const [openMenu, setOpenMenu] = useState(false)
   const [stateTipo, setStateTipo] = useState(false)
-  const { colorCategoria, tituloBtnDes, bgCategoria, setTipo } = useOperaciones()
+  const { colorCategoria, tituloBtnDes, bgCategoria, setTipo, tipo } = useOperaciones()
   const [openRegistro, setOpenRegistro] = useState(false);
   const [accion, setAccion] = useState("");
-  const [dataSelect, setdataSelect] = useState([]);
+  const [dataSelect, setDataSelect] = useState([]);
 
   const cambiarTipo = (p) => {
     setTipo(p)
@@ -43,11 +50,18 @@ export const CategoriasTemplate = () => {
   const nuevoRegistro = () => {
     setOpenRegistro(!openRegistro);
     setAccion("Nuevo");
-    setdataSelect([]);
+    setDataSelect([]);
   }
   
   return (
     <Container onClick={cerrarDesplegables}>
+      {openRegistro && (
+        <RegistrarCategorias
+          dataSelect={dataSelect}
+          accion={accion}          
+          onClose={() => setOpenRegistro(!openRegistro)}
+        />
+      )}
       <header className='header'>
         <Header stateConfig={{ state: openMenu, setState: toggleMenuUser }} />        
       </header>
@@ -64,11 +78,12 @@ export const CategoriasTemplate = () => {
               <ListaMenuDesplegable
                 top="112%"
                 data={DataDesplegableTipo}
-                funcion={(p)=> cambiarTipo(p)}
+                funcion={(p) => cambiarTipo(p)}
               />
             )}
           </div>
-        </ContentFiltros>            
+        </ContentFiltros>         
+        <h1>Categorías</h1>   
       </section>      
       <section className='area2'>
         <ContentFiltro>
@@ -81,7 +96,22 @@ export const CategoriasTemplate = () => {
         </ContentFiltro>
       </section>
       <section className='main'>
-        area3
+        {data.length == 0 && (
+          <div className='mensaje-nodata'>
+            <LottieAnimacion
+              alto="300"
+              ancho="300"
+              animacion={tipo == "i" ? vacioverde : vaciorojo}
+            />
+            <p><strong>No</strong> hay {tipo == "i" ? "Categorías de Ingresos": "Categorías de Gastos"} registrados todavía.</p>
+          </div>
+        )}
+        <TablaCategorias 
+          data={data}
+          SetopenRegistro={setOpenRegistro}
+          setdataSelect={setDataSelect}
+          setAccion={setAccion}
+        />
       </section>
     </Container>
   )
@@ -90,7 +120,7 @@ export const CategoriasTemplate = () => {
 const Container = styled.div`
   min-height: 100vh;
   padding: 15px;
-  width: 100%;
+  width: 100%;  
   background: ${({ theme}) => theme.bgtotal };
   color: ${({ theme}) => theme.text }; 
   display: grid;
@@ -99,31 +129,39 @@ const Container = styled.div`
     "tipo" 100px
     "area2" 50px
     "main" auto;
-
+  
   .header {
     grid-area: header; 
-    background-color: rgba(103,93,241,0.14);
+    /* background-color: rgba(103,93,241,0.14); */
     display: flex;
     align-items: center;
   }
 
   .tipo {
     grid-area: tipo;
-    background-color: rgba(229,67,26,0.14);
+    /* background-color: rgba(229,67,26,0.14); */
     display: flex;
     align-items: center;
+    gap: 20px;
   }
 
   .area2 {
     grid-area: area2;
-    background-color: rgba(77,237,106,0.14);
+    /* background-color: rgba(77,237,106,0.14); */
     display: flex;
     align-items: center;
     justify-content: end;
   }
+
   .main {
     grid-area: main;
-    background-color: rgba(179,46,241,0.14);
+    /* background-color: rgba(179,46,241,0.14); */
+    .mensaje-nodata {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
   }
 `
 

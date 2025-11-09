@@ -25,7 +25,8 @@ export const ListaPaises = ({ setSelect, setState }) => {
       <header className='header'>
         <span>Busca tu país</span>
         <BtnCerrar funcion={setState} />        
-      </header>    
+      </header>   
+      <Divider/> 
       <InputBuscadorLista
         placeholder="buscar..."
         onChange={buscar}
@@ -50,7 +51,8 @@ const Container = styled.div`
   flex-direction: column;
   background: ${({ theme }) => theme.bgtotal};
   border-radius: 10px; 
-  border: 3px solid #3a3a3a;
+  border: 3px solid ${(props) => props.color};
+  box-shadow: 4px 9px 20px -12px ${(props) => props.color};
   padding: 10px;
   gap: 10px;
   color: ${({ theme }) => theme.text};  
@@ -70,6 +72,7 @@ const Container = styled.div`
       cursor: pointer;
       font-size: 25px;
       transition: all 0.2s;
+      
       &:hover {
         color: ${() => v.colorselector};
         transform: scale(1.2);
@@ -88,4 +91,11 @@ const ItemContainer = styled.section`
   &:hover {
     background-color: ${({theme})=>theme.bgtotal};
   }
+`;
+
+const Divider = styled.div`
+  height: 1px;
+  width: 100%;
+  background: ${(props) => props.theme.bg4};
+  margin: ${() => v.xsSpacing } 0;
 `;

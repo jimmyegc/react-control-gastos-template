@@ -2,11 +2,12 @@ import { create } from "zustand";
 import { v } from "../styles/variables";
 
 export const useOperaciones = create((set, get) => ({  
-  tituloBtnDes: "Categorias ingresos",
+  tipo: "i",
+  tituloBtnDes: "Categorías ingresos",
   tituloBtnDesMovimientos: "Ingresos",
   colorCategoria:  v.colorIngresos,
   bgCategoria:  v.colorbgingresos,
-  año: (new Date).getFullYear(),
+  anio: (new Date).getFullYear(),
   mes: (new Date).getMonth()+1,
   setMes: (p) => {
     set({ mes: p });

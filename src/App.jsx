@@ -1,30 +1,25 @@
 
 import { useState, createContext } from 'react'
-import { 
-  Light, 
-  Dark, 
+import {   
   AuthContextProvider, 
   MyRoutes, 
   Sidebar, 
   Device, 
-  Menu, 
+  MenuHamburger, 
   useUsuariosStore,
   Login,
   SpinnerLoader,  
+  ThemeProviderWithContext,
 } from './index'
 import { useLocation } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
 import { styled } from 'styled-components'
 import { useQuery } from '@tanstack/react-query'
-
 
 export const ThemeContext = createContext(null);
 
 function App() {
   const { dataUsuarios, mostrarUsuarios } = useUsuariosStore()
-  const theme = dataUsuarios?.tema === "0" ? 'light':'dark';
-  //const [theme, setTheme] = useState("dark");
-  const themeStyle = theme === "light" ? Light : Dark
+  const theme = dataUsuarios?.tema === "0" ? 'light':'dark';    
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pathname } = useLocation()
     
@@ -34,7 +29,9 @@ function App() {
   })
 
   if (isLoading) {
-    return <SpinnerLoader />;
+    return (<ThemeProviderWithContext theme={theme}>
+      <SpinnerLoader />
+    </ThemeProviderWithContext>)
   }
 
   if(error) { 
@@ -42,25 +39,25 @@ function App() {
   }
 
   return (   
-    <ThemeContext.Provider value={{ theme }}>
-      <ThemeProvider theme={themeStyle}>
-        <AuthContextProvider>
-          {pathname != "/login" ? (
-            <Container className={sidebarOpen?'active':''}>
-              <div className="ContentSidebar">
-                <Sidebar state={sidebarOpen} setState={setSidebarOpen} />
-              </div>      
-              <div className='ContentMenu'>
-                <Menu />
-              </div>      
-              <ContainerBody>
-                <MyRoutes />   
-              </ContainerBody>
-            </Container>) : (<Login />)}
-          
-        </AuthContextProvider>
-      </ThemeProvider>        
-    </ThemeContext.Provider>
+    <ThemeProviderWithContext theme={theme}>
+      <AuthContextProvider>
+        {pathname !== "/login" ? (
+          <Container className={sidebarOpen ? "active" : ""}>
+            <div className="ContentSidebar">
+              <Sidebar state={sidebarOpen} setState={setSidebarOpen} />
+            </div>
+            <div className="ContentMenuHamburger">
+              <MenuHamburger />
+            </div>
+            <ContainerBody>
+              <MyRoutes />
+            </ContainerBody>
+          </Container>
+        ) : (
+          <Login />
+        )}
+      </AuthContextProvider>
+    </ThemeProviderWithContext>
   )
 }
 
@@ -73,9 +70,11 @@ const Container = styled.div`
   .ContentSidebar {
     display: none;
   }
-  .ContentMenu {
-      display: block;
-    }
+  .ContentMenuHamburger {
+    display: block;
+    position: absolute;
+    left: 20px;
+  }
   @media ${Device.tablet} {    
     grid-template-columns: 65px 1fr;
     &.active {
@@ -84,7 +83,7 @@ const Container = styled.div`
     .ContentSidebar {
       display: initial;
     }
-    .ContentMenu {
+    .ContentMenuHamburger {
       display: none;
     }
   }
@@ -93,6 +92,7 @@ const Container = styled.div`
 const ContainerBody = styled.div`  
   width: 100%;
   grid-column: 1;
+
   @media ${Device.tablet} {    
     grid-column: 2;
   }

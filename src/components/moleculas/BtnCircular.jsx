@@ -5,12 +5,12 @@ export const BtnCircular = ({ icono, width, height, bgcolor, textColor, fontsize
   return (
     <Container
       $bgcolor={bgcolor}
-      textColor={textColor}
-      height={height}
-      width={width}
-      fontsize={fontsize}
-      translateX={translateX}
-      translateY={translateY}
+      $textColor={textColor}
+      $height={height}
+      $width={width}
+      $fontsize={fontsize}
+      $translateX={translateX}
+      $translateY={translateY}
     >
       <span>{icono}</span>
     </Container>
@@ -20,17 +20,19 @@ export const BtnCircular = ({ icono, width, height, bgcolor, textColor, fontsize
 
 const Container = styled.button`
   background-color: ${(props) => props.$bgcolor };
-  min-width: ${(props) => props.width };
-  min-height: ${(props) => props.height };
+  min-width: ${(props) => props.$width };
+  min-height: ${(props) => props.$height };
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  transform: translateX(${(props) => props.translateX}) translateY(${(props) => props.translateY});
+  transform: translateX(${(props) => props.$translateX}) translateY(${(props) => props.$translateY});
+  border: 1px solid ${(props) => props.$textColor};
 
   span {
-    font-size: ${(props) => props.fontsize };
+    font-size: ${(props) => props.$fontsize };
     text-align: center;
+    color: ${(props) => props.$textColor };
   }
 `

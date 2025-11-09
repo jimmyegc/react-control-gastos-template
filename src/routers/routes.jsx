@@ -5,7 +5,10 @@ import {
   ProtectedRoutes, 
   UserAuth, 
   Categorias,
-  Configuracion,   
+  Movimientos,
+  Informes,
+  Configuracion,     
+  MiPerfil,
 } from '../index'
 
 export const MyRoutes = () => {
@@ -22,7 +25,10 @@ export const MyRoutes = () => {
     >
         <Route path ="/" element={<Home/>} />
         <Route path ="/categorias" element={<Categorias />} />        
+        <Route path ="/movimientos" element={<Movimientos />} />       
+        <Route path ="/informes" element={<Informes />} />               
         <Route path ="/configuracion" element={<Configuracion/>} />
+        <Route path = "/perfil" element={<MiPerfil />} />
       </Route>            
     </Routes>
   )
