@@ -8,44 +8,18 @@ import {
 export const HomeTemplate = () => {
   
   return (
-    <Main>
+  
       <Container>
-        <Box>
+{/*         <Box>
           <Carousel />
-        </Box>
+        </Box> */}
+        
         <Title>
           Bienvenido a Kiiro <br /> 🐷
-        </Title>
-        {/* <SubText>
-          Cerdyn nace por las pocas aplicaciones gratis que existen para
-          controlar gastos e ingresos.
-          <br />
-          ❤️Está surgiendo como curso para lograr presupuestarlo,
-          <br /> MUCHAS GRACIAS POR APOYAR ESTE PROYECTO
-        </SubText> */}
-        <ContainerAutor>
-          {/* <div className="contentImg">
-            <img src="https://i.ibb.co/6Nw0B9p/yjtityutyu.png" />
-          </div>
-          <div className="contentDescripcion">
-            <b>Ing. Franklin Bustamante</b>
-            <span>"cualquiera puede programar"</span>
-          </div> */}
-        </ContainerAutor>
-        <ButtonContainer>
-          {/* <BtnSave url="https://t.me/htmlycss369"
-            titulo="UNIRSE A Telegram"
-            bgcolor="#BF94FF"
-            icono={<v.iconoreact />}
-          />
-          <BtnSave url="https://www.udemy.com/course/sistema-para-el-control-de-gastos-con-reactjs-y-postgresql/?couponCode=CERDYNREACT"
-            titulo="Ver curso"
-            bgcolor="#fb37b7"
-            icono={<v.iconocorona />}
-          /> */}
-        </ButtonContainer>
+          Control de Gastos
+        </Title>        
       </Container>
-    </Main>
+
   );
 }
 
@@ -71,7 +45,7 @@ const Container = styled.div`
 `;
 
 const Box = styled.div`
-  width: 50%;
+  /*width: 50%;
   height: 100%;
   min-height: 60vh;
   display: flex;
@@ -81,7 +55,7 @@ const Box = styled.div`
 
   @media (max-width: 40em) {
     min-height: 50vh;
-  }
+  }*/
 `;
 
 const Title = styled.h2`

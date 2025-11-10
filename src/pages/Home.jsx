@@ -4,13 +4,13 @@ import { HomeTemplate } from '../index'
 
 export const Home = () => {
 
-  return (
+  return (    
     <Container>
-      {/* <HomeTemplate /> */}
+      <HomeTemplate />
     </Container>
   )
 }
 
-const Container = styled.div`
+const Container = styled.div`  
   height: 100vh
 `;

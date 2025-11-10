@@ -5,7 +5,7 @@ const Svg = styled.svg `
   width: 100px;
   height: 100px;
   transition: all 0.3s ease-in-out;
-
+  
   path {
     fill: ${({ theme }) => theme.logo.pigFill};
     stroke: ${({ theme }) => theme.logo.stroke};

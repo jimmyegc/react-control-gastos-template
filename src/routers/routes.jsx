@@ -28,7 +28,7 @@ export const MyRoutes = () => {
         <Route path ="/movimientos" element={<Movimientos />} />       
         <Route path ="/informes" element={<Informes />} />               
         <Route path ="/configuracion" element={<Configuracion/>} />
-        <Route path = "/perfil" element={<MiPerfil />} />
+        <Route path ="/perfil" element={<MiPerfil />} />
       </Route>            
     </Routes>
   )

@@ -61,9 +61,9 @@ export const Sidebar = ({ state, setState }) => {
 const Container = styled.div`
   color: ${(props) => props.theme.text};
   background: ${(props) => props.theme.bg};
-  position: fixed;
-  padding-top: 20px;
+  position: fixed;  
   z-index: 1;
+  top: 0;
   height: 100%;
   width: 65px;
   transition: 0.3s ease-in-out;
@@ -75,21 +75,22 @@ const Container = styled.div`
   &.active {
     width: 220px;
   }
-  .LogoContent {
+  
+  .LogoContent {    
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-bottom: 60px;
+    justify-content: center;
     gap: 10px;
-    
+        
     .imgContent {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: start;
       width: 48px;      
       transition: all 0.35s ease;
       transform: ${({ $isOpen }) => ($isOpen?`scale(0.95)`:`scale(1.5)`)} rotate(${({ theme }) => theme.logorotate});
-      
+      padding-bottom: ${({ $isOpen }) => ($isOpen?`0px`:`20px`)}
+            
       img {
         width: 100%;
         animation: flotar 1.7s ease-in-out infinite alternate;
@@ -98,6 +99,7 @@ const Container = styled.div`
 
     h2, span {
       display: ${({ $isOpen }) => ($isOpen ? `block` : `none`)};
+      
     }
 
     span {

@@ -25,7 +25,7 @@ export function Carousel() {
     <Container>
       <Swiper
         // install Swiper modules
-        autoplay={{ delay: 1500, disableOnInteraction: false }}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
         modules={[
           EffectCards,
           Navigation,
@@ -34,7 +34,7 @@ export function Carousel() {
           A11y,
           Autoplay,
         ]}
-        navigation={true}
+        navigation={false}
         pagination={{ type: "fraction" }}
         scrollbar={{ draggable: true }}
         effect={"cards"}
