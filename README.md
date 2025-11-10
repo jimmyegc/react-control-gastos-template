@@ -1,12 +1,6 @@
 # 💸 Kiiro – Control de Gastos
 
-<<<<<<< HEAD
-<p align="center">
-  <img src="https://kiiro-control-gastos.netlify.app/android-chrome-192x192.png" alt="Kiiro App" width="250" style="margin-bottom: 20px;" />
-</p>
-=======
-![Kiiro App](image.png)
->>>>>>> b251e854f3486fb1afc76af0684016a6d68f690f
+![Logo App](screenshots/logo-app.png)
 
 Kiiro es una aplicación web moderna para **gestionar tus gastos personales**, desarrollada con **React + Supabase + Vite**.  
 Permite llevar un control inteligente de tus ingresos y egresos, generar reportes dinámicos, visualizar gráficas y alternar entre modo claro y oscuro.
@@ -41,6 +35,45 @@ Permite llevar un control inteligente de tus ingresos y egresos, generar reporte
 
 ---
 
+## 📊 Capturas de pantalla
+
+| Dashboard                              | Modo oscuro                            |
+| -------------------------------------- | -------------------------------------- |
+| ![Informes](screenshots/informes-light-mode.png) | ![Dark Mode](screenshots/informes-dark-mode.png) |
+
+---
+
+## 🚀 Próximas mejoras
+
+- 📱 Adaptación completa para móviles.
+- 🧩 Exportar reportes a PDF o Excel.
+- 🔔 Recordatorios automáticos de gastos recurrentes.
+- 💾 Sincronización con APIs de cuentas bancarias.
+
+---
+
+## 👨‍💻 Autor
+
+Desarrollado por **Jimmy García** basandome en el curso "Sistema para el control de gastos con ReactJs y PostgresSQL".
+
+💼 [LinkedIn](https://www.linkedin.com/in/jimmyegc/)
+🐙 [GitHub](https://github.com/jimmyegc)
+📄 [Udemy](https://www.udemy.com/course/sistema-para-el-control-de-gastos-con-reactjs-y-postgresql/?couponCode=CERDYNREACT)
+
+---
+
+## 🧠 Sobre Kiiro
+
+> “Kiiro” significa _amarillo_ en japonés 🌕 — un color asociado con la energía, el equilibrio y la prosperidad.
+> Esta aplicación busca ayudarte a alcanzar ese equilibrio financiero con una interfaz limpia, moderna y eficiente.
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**.
+Consulta el archivo [LICENSE](./LICENSE) para más información.
+
 ## ⚙️ Configuración local
 
 1. **Clona el repositorio:**
@@ -48,6 +81,7 @@ Permite llevar un control inteligente de tus ingresos y egresos, generar reporte
    git clone https://github.com/jimmyegc/react-control-gastos-template.git
    cd react-control-gastos-template
    ```
+
 ````
 
 2. **Instala dependencias:**
@@ -97,45 +131,9 @@ Esto le indica a Netlify que ignore las variables de entorno públicas de Supaba
 
 ---
 
-## 📊 Capturas de pantalla
 
-| Dashboard                              | Modo oscuro                            |
-| -------------------------------------- | -------------------------------------- |
-| ![Informes](screenshot-light-mode.png) | ![Dark Mode](screenshot-dark-mode.png) |
-
----
-
-## 🚀 Próximas mejoras
-
-- 📱 Adaptación completa para móviles.
-- 🧩 Exportar reportes a PDF o Excel.
-- 🔔 Recordatorios automáticos de gastos recurrentes.
-- 💾 Sincronización con APIs de cuentas bancarias.
-
----
-
-## 👨‍💻 Autor
-
-Desarrollado por **Jimmy García** basandome en el curso "Sistema para el control de gastos con ReactJs y PostgresSQL".
-
-💼 [LinkedIn](https://www.linkedin.com/in/jimmyegc/)
-🐙 [GitHub](https://github.com/jimmyegc)
-📄 [Udemy](https://www.udemy.com/course/sistema-para-el-control-de-gastos-con-reactjs-y-postgresql/?couponCode=CERDYNREACT)
-
----
-
-## 🧠 Sobre Kiiro
-
-> “Kiiro” significa _amarillo_ en japonés 🌕 — un color asociado con la energía, el equilibrio y la prosperidad.
-> Esta aplicación busca ayudarte a alcanzar ese equilibrio financiero con una interfaz limpia, moderna y eficiente.
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia **MIT**.
-Consulta el archivo [LICENSE](./LICENSE) para más información.
 
 ```
 
 ```
+````
