@@ -109,7 +109,7 @@ export const MovimientosTemplate = () => {
         <Header stateConfig={{ state: openMenu, setState: () => setOpenMenu(!openMenu) }} />                
       </header>      
       <section className='titulo'>
-        <Titulo title="Movimientos" align='center' />    
+        <Titulo title="Movimientos" />    
       </section>
       <section className='tipo'>
         <ContentFiltros>          
@@ -128,8 +128,7 @@ export const MovimientosTemplate = () => {
               />
             )}            
           </div>            
-        </ContentFiltros>         
-                                 
+        </ContentFiltros>                                          
         <ContentFiltro>
           <BtnFiltro 
             funcion={nuevoRegistro}
@@ -139,8 +138,7 @@ export const MovimientosTemplate = () => {
           />
         </ContentFiltro>
       </section>  
-      <section className='totales'>
-        
+      <section className='totales'>        
         <CardTotales 
           title={tipo == "g" ? "Gastos Pendientes" : "Ingresos Pendientes"}
           total={totalMesAñoPendientes}

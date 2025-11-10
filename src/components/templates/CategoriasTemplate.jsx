@@ -67,7 +67,7 @@ export const CategoriasTemplate = ({ data }) => {
         <Header stateConfig={{ state: openMenu, setState: toggleMenuUser }} />        
       </header>
       <section className='tipo'>
-        <Titulo title="Categorías" align="center" />            
+        <Titulo title="Categorías" />            
       </section>      
       <section className='area2'>
         <ContentFiltros>          

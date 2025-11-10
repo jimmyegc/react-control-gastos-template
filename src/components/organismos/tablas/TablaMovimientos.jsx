@@ -3,6 +3,8 @@ import {
   ContentAccionesTabla,
   useMovimientosStore,  
   Paginacion,
+  formatCurrency,
+  useUsuariosStore,
 } from "../../../index";
 import Swal from "sweetalert2";
 import { v } from "../../../styles/variables";
@@ -17,6 +19,7 @@ export function TablaMovimientos({
 
   if(data?.length == 0) return;
 
+  const { dataUsuarios: { moneda } } = useUsuariosStore();
   const [pagina, setPagina] = useState(1);
   const [porPagina, setPorPagina] = useState(10);  
   const maximo = Math.ceil(data?.length / porPagina) || 1;
@@ -78,7 +81,8 @@ export function TablaMovimientos({
                     <td data-title="Descripción">{item.descripcion}</td>
                     <td data-title="Categoría">{item.categoria}</td>
                     <td data-title="Cuenta">{item.cuenta}</td>
-                    <td data-title="Monto">{item.valorymoneda}</td>
+                    <td data-title="Monto">{formatCurrency(item.valor, moneda)}</td>
+                    
                     <td data-title="Acciones">
                       <ContentAccionesTabla         
                         funcionEditar={() => editar(item)}               
