@@ -37,7 +37,7 @@ Permite llevar un control inteligente de tus ingresos y egresos, generar reporte
 
 ## 📊 Capturas de pantalla
 
-| Dashboard                                        | Modo oscuro                                      |
+| Modo Claro                                       | Modo oscuro                                      |
 | ------------------------------------------------ | ------------------------------------------------ |
 | ![Informes](screenshots/informes-light-mode.png) | ![Dark Mode](screenshots/informes-dark-mode.png) |
 
