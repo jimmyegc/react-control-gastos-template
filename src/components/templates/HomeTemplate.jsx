@@ -8,7 +8,7 @@ import {
 export const HomeTemplate = () => {
   
   return (
-  
+  <Main>
       <Container>
 {/*         <Box>
           <Carousel />
@@ -19,7 +19,7 @@ export const HomeTemplate = () => {
           Control de Gastos
         </Title>        
       </Container>
-
+</Main>
   );
 }
 

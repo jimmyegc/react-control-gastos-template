@@ -2,8 +2,8 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 
 const Svg = styled.svg `
-  width: 100px;
-  height: 100px;
+  width: ${(props) => props.$width};
+  height: ${(props) => props.$height};
   transition: all 0.3s ease-in-out;
   
   path {
@@ -13,15 +13,15 @@ const Svg = styled.svg `
 `;
 
 
-export const KiiroLogo = () => {
+export const KiiroLogo = ({ width = "52px", height ="52px" }) => {
   const theme = useTheme();
 
   return (   
     <Svg 
       version="1.0" 
       xmlns="http://www.w3.org/2000/svg"
-      width="1024.000000pt" 
-      height="1024.000000pt" 
+      width={width}
+      height={height}
       viewBox="0 0 1024.000000 1024.000000"
       preserveAspectRatio="xMidYMid meet"
     >      

@@ -121,7 +121,7 @@ const Container = styled.div`
   min-height: 100vh;
   padding: 15px;
   width: 100%;  
-  background: ${({ theme}) => theme.bgtotal };
+  background: ${({ theme}) => theme.bgtotal };  
   color: ${({ theme}) => theme.text }; 
   display: grid;
   grid-template: 

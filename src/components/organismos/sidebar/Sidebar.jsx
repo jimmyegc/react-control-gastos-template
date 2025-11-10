@@ -21,13 +21,15 @@ export const Sidebar = ({ state, setState }) => {
       <Container $isOpen={state} className={state?'active':''}>
         <div className='LogoContent'>
           <div className='imgContent'>
-            <KiiroLogo />            
+            <KiiroLogo width="64px" height="64px" />            
           </div>  
           <div>
             <h2>Kiiro</h2>             
             <span>Control de Gastos</span>    
           </div>                      
-        </div>            
+        </div>
+        <div className='MenuSidebar'>
+          
         {LinksArray.map(({ icon, label, to })=> (
           <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
             <NavLink to={to} 
@@ -53,6 +55,7 @@ export const Sidebar = ({ state, setState }) => {
         ))}
         <Divider />
         {state && (<SidebarCard/>)}        
+        </div>            
       </Container>
     </Main>
   )
@@ -62,8 +65,7 @@ const Container = styled.div`
   color: ${(props) => props.theme.text};
   background: ${(props) => props.theme.bg};
   position: fixed;  
-  z-index: 1;
-  top: 0;
+  z-index: 1;  
   height: 100%;
   width: 65px;
   transition: 0.3s ease-in-out;
@@ -81,14 +83,14 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
-        
+            
     .imgContent {
       display: flex;
       justify-content: center;
-      align-items: start;
-      width: 48px;      
+      align-items: center;
+      width: 64px;
       transition: all 0.35s ease;
-      transform: ${({ $isOpen }) => ($isOpen?`scale(0.95)`:`scale(1.5)`)} rotate(${({ theme }) => theme.logorotate});
+      transform: ${({ $isOpen }) => ($isOpen?`scale(0.75)`:`scale(1.15)`)} rotate(${({ theme }) => theme.logorotate});
       padding-bottom: ${({ $isOpen }) => ($isOpen?`0px`:`20px`)}
             
       img {
@@ -119,6 +121,11 @@ const Container = styled.div`
       }
     }
   }
+
+  .MenuSidebar {
+    margin-top: 40px;
+  }
+
   .LinkContainer {
     margin: 5px 0;
     transition: all 0.3s;
@@ -161,7 +168,7 @@ const Container = styled.div`
 const Main = styled.div`
   .SidebarButton {
     position: fixed;
-    top: 70px;
+    top: 64px;
     left: 42px;  
     width: 32px;
     height: 32px;

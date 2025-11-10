@@ -7,6 +7,7 @@ import {
   useOperaciones,
 } from '../index'
 import { useQuery } from '@tanstack/react-query'
+import styled from 'styled-components'
 
 export const Categorias = () => {
   const { dataUsuarios } = useUsuariosStore()
@@ -23,7 +24,13 @@ export const Categorias = () => {
     return <h1>Error...</h1>
   }
 
-  return (    
-    <CategoriasTemplate data={datacategoria} />    
+  return (
+    <Container>
+      <CategoriasTemplate data={datacategoria} />
+    </Container>        
   )
 }
+
+const Container = styled.div`
+  margin-top: 60px;
+`

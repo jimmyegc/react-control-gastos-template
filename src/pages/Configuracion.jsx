@@ -12,4 +12,5 @@ export const Configuracion = () => {
 
 const Container = styled.main`
   height: 100vh;
+  margin-top: 60px;
 `
