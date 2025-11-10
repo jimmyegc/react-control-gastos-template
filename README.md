@@ -1,6 +1,11 @@
+````markdown
 # 💸 Kiiro – Control de Gastos
 
-![Kiiro App](image.png)
+<p align="center">
+  <img src="image.png" alt="Kiiro App" width="250" style="margin-bottom: 20px;" />
+</p>
+
+![Kiiro App](image.png=250x)
 
 Kiiro es una aplicación web moderna para **gestionar tus gastos personales**, desarrollada con **React + Supabase + Vite**.  
 Permite llevar un control inteligente de tus ingresos y egresos, generar reportes dinámicos, visualizar gráficas y alternar entre modo claro y oscuro.
@@ -42,7 +47,6 @@ Permite llevar un control inteligente de tus ingresos y egresos, generar reporte
    git clone https://github.com/jimmyegc/react-control-gastos-template.git
    cd react-control-gastos-template
    ```
-
 ````
 
 2. **Instala dependencias:**
@@ -94,32 +98,34 @@ Esto le indica a Netlify que ignore las variables de entorno públicas de Supaba
 
 ## 📊 Capturas de pantalla
 
-| Dashboard                                     | Modo oscuro                                   |
-| --------------------------------------------- | --------------------------------------------- |
-| ![Informes Dark Mode](https://imgur.com/a/7NnNLYR) | ![Informes Light Mode](https://imgur.com/a/7NnNLYR) |
+| Dashboard                              | Modo oscuro                            |
+| -------------------------------------- | -------------------------------------- |
+| ![Informes](screenshot-light-mode.png) | ![Dark Mode](screenshot-dark-mode.png) |
 
 ---
 
 ## 🚀 Próximas mejoras
 
-* 📱 Adaptación completa para móviles.
-* 🧩 Exportar reportes a PDF o Excel.
-* 🔔 Recordatorios automáticos de gastos recurrentes.
-* 💾 Sincronización con APIs de cuentas bancarias.
+- 📱 Adaptación completa para móviles.
+- 🧩 Exportar reportes a PDF o Excel.
+- 🔔 Recordatorios automáticos de gastos recurrentes.
+- 💾 Sincronización con APIs de cuentas bancarias.
 
 ---
 
 ## 👨‍💻 Autor
 
-Desarrollado por **Jimmy García**
+Desarrollado por **Jimmy García** basandome en el curso "Sistema para el control de gastos con ReactJs y PostgresSQL".
+
 💼 [LinkedIn](https://www.linkedin.com/in/jimmyegc/)
 🐙 [GitHub](https://github.com/jimmyegc)
+📄 [Udemy](https://www.udemy.com/course/sistema-para-el-control-de-gastos-con-reactjs-y-postgresql/?couponCode=CERDYNREACT)
 
 ---
 
 ## 🧠 Sobre Kiiro
 
-> “Kiiro” significa *amarillo* en japonés 🌕 — un color asociado con la energía, el equilibrio y la prosperidad.
+> “Kiiro” significa _amarillo_ en japonés 🌕 — un color asociado con la energía, el equilibrio y la prosperidad.
 > Esta aplicación busca ayudarte a alcanzar ese equilibrio financiero con una interfaz limpia, moderna y eficiente.
 
 ---
@@ -131,9 +137,4 @@ Consulta el archivo [LICENSE](./LICENSE) para más información.
 
 ```
 
----
-
-¿Quieres que el README también incluya una **sección técnica avanzada** (por ejemplo: estructura del proyecto, hooks personalizados, o conexión con Supabase RPC)?
-Puedo añadir eso en una segunda versión para hacerlo más atractivo a reclutadores o contribuyentes.
 ```
-````
