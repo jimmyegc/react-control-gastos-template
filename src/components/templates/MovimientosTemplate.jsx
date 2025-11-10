@@ -109,7 +109,7 @@ export const MovimientosTemplate = () => {
         <Header stateConfig={{ state: openMenu, setState: () => setOpenMenu(!openMenu) }} />                
       </header>      
       <section className='titulo'>
-<Titulo title="Movimientos" align='center' />    
+        <Titulo title="Movimientos" align='center' />    
       </section>
       <section className='tipo'>
         <ContentFiltros>          

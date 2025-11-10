@@ -2,6 +2,7 @@ import { create } from "zustand";
 import {
   MostrarMovimientosPorMesAño,
   InsertarMovimientos,
+  EditarMovimientos,
   EliminarMovimientos,
   RptMovimientosPorMesAño,
 } from "../index";
@@ -46,6 +47,12 @@ export const useMovimientosStore = create((set, get) => ({
   },
   insertarMovimientos: async (p) => {    
     await InsertarMovimientos(p);
+    const { mostrarMovimientos } = get();
+    const { parametros } = get();
+    set(mostrarMovimientos(parametros));
+  },
+  editarMovimientos: async (id, p) => {
+    await EditarMovimientos(id, p)
     const { mostrarMovimientos } = get();
     const { parametros } = get();
     set(mostrarMovimientos(parametros));

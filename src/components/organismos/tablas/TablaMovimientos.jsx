@@ -80,7 +80,8 @@ export function TablaMovimientos({
                     <td data-title="Cuenta">{item.cuenta}</td>
                     <td data-title="Monto">{item.valorymoneda}</td>
                     <td data-title="Acciones">
-                      <ContentAccionesTabla                        
+                      <ContentAccionesTabla         
+                        funcionEditar={() => editar(item)}               
                         funcionEliminar={() => eliminar(item)}
                       />
                     </td>

@@ -28,6 +28,37 @@ export const InsertarMovimientos = async (p) => {
   }
 };
 
+export const EditarMovimientos = async (id, p) => {
+  try {
+    const { data, error } = await supabase
+      .from("movimientos")
+      .update(p)
+      .eq("id", id)
+      .select();
+
+    if (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo actualizar el registro: " + error.message,
+      });
+      return;
+    }
+
+    if (data) {
+      Swal.fire({
+        icon: "success",
+        title: "Actualizado correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  } catch (error) {
+    alert(error.error_description || error.message + " editar movimientos");
+  }
+};
+
+
 export async function EliminarMovimientos(p) {
   try {
     const { error } = await supabase

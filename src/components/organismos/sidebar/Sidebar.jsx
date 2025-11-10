@@ -82,7 +82,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding-bottom: 60px;
-    gap: ${({ $isOpen }) => ($isOpen?"10px":"0px")};
+    gap: ${({ $isOpen }) => ($isOpen?"20px":"0px")};
             
     .imgContent {
       display: flex;
@@ -141,6 +141,7 @@ const Container = styled.div`
       padding: calc(${() => v.smSpacing} - 2px) 0;
       color: ${(props) => props.theme.text};
       height: 60px;
+
       .LinkIcon {
         padding: ${() => v.smSpacing} ${() => v.mdSpacing};
         display: flex;

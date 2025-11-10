@@ -24,10 +24,11 @@ import { SlGraph } from "react-icons/sl";
 import { BsBarChartLine } from "react-icons/bs";
 import { AiOutlineCalculator } from "react-icons/ai";
 import { BsCalendarCheck } from "react-icons/bs";
-import {IoIosArrowForward} from "react-icons/io"
+import {IoIosArrowForward} from "react-icons/io";
 import fondo from "../assets/fondo1.svg";
-import {GrFormPrevious,GrCaretNext} from "react-icons/gr"
-import {MdOutlineBorderAll} from "react-icons/md"
+import {GrFormPrevious,GrCaretNext} from "react-icons/gr";
+import {MdOutlineBorderAll} from "react-icons/md";
+import { FaCalendar } from "react-icons/fa";
 
 export const v = {
   sidebarWidth: `300px`,
@@ -89,5 +90,5 @@ export const v = {
   iconoprev:GrFormPrevious,
   icononext:GrCaretNext,
   iconotodos:MdOutlineBorderAll,
-  
+  iconocalendario: FaCalendar,
 };
