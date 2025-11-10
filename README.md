@@ -1,6 +1,8 @@
 ````markdown
 # 💸 Kiiro – Control de Gastos
 
+<img src="image.png" alt="Kiiro App" width="250" />
+
 ![Kiiro App](image.png = 250x)
 
 Kiiro es una aplicación web moderna para **gestionar tus gastos personales**, desarrollada con **React + Supabase + Vite**.  
