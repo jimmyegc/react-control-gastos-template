@@ -4,6 +4,7 @@ export * from './components/atomos/ColorContent';
 export * from './components/atomos/ContentFiltros';
 export * from './components/atomos/ContentHeader';
 export * from './components/atomos/Icono';
+export * from './components/atomos/Titulo';
 export * from './components/moleculas/BtnCircular';
 export * from './components/moleculas/BtnDesplegable';
 export * from './components/moleculas/BtnFiltro';

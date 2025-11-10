@@ -41,9 +41,8 @@ export const EditarTemaMonedaUser = async (p) => {
       .from("usuarios")
       .update(p)
       .eq("id", p.id)
-    if (error) {
-      console.log(error)
-      alert("Error al editar usuarios", error);      
+    if (error) {      
+      alert("EditarTemaMonedaUser", error);      
     } else {    
       Swal.fire({        
         icon: 'success',

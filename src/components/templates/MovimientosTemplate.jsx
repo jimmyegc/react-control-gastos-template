@@ -18,6 +18,7 @@ import {
   BtnDesplegable,
   BtnFiltro,
   RegistrarMovimientos,
+  Titulo,
 } from '../../index'
 import { Device } from '../../styles/breakpoints'
 import { useQuery } from '@tanstack/react-query'
@@ -100,12 +101,16 @@ export const MovimientosTemplate = () => {
         <RegistrarMovimientos 
           dataSelect={dataSelect}
           state={openRegistro}
+          accion={accion}
           setState={() => setOpenRegistro(!openRegistro)}
         />
       )}
       <header className='header'>
-        <Header stateConfig={{ state: openMenu, setState: () => setOpenMenu(!openMenu) }} />        
-      </header>
+        <Header stateConfig={{ state: openMenu, setState: () => setOpenMenu(!openMenu) }} />                
+      </header>      
+      <section className='titulo'>
+<Titulo title="Movimientos" align='center' />    
+      </section>
       <section className='tipo'>
         <ContentFiltros>          
           <div onClick={(e) => e.stopPropagation()}>
@@ -117,14 +122,14 @@ export const MovimientosTemplate = () => {
             />
             { stateTipo && (
               <ListaMenuDesplegable
-                top="112%"
+                top="58px"
                 data={DataDesplegableMovimientos}
                 funcion={(p) => cambiarTipo(p)}
               />
             )}            
-          </div>          
-          <h1>Movimientos</h1>
-        </ContentFiltros>            
+          </div>            
+        </ContentFiltros>         
+                                 
         <ContentFiltro>
           <BtnFiltro 
             funcion={nuevoRegistro}
@@ -135,6 +140,7 @@ export const MovimientosTemplate = () => {
         </ContentFiltro>
       </section>  
       <section className='totales'>
+        
         <CardTotales 
           title={tipo == "g" ? "Gastos Pendientes" : "Ingresos Pendientes"}
           total={totalMesAñoPendientes}
@@ -162,10 +168,13 @@ export const MovimientosTemplate = () => {
           setFormatoFecha={setFormatoFecha}
         />
       </section>
-      <section className='main'>
-        <TablaMovimientos 
+      <section className='main'>        
+        <TablaMovimientos           
           data={datamovimientos}
-          SetopenRegistro={() => setOpenRegistro(!openRegistro)}
+          dataSelect={dataSelect}
+          setDataSelect={setDataSelect}
+          setAccion={setAccion}
+          setOpenRegistro={() => setOpenRegistro(!openRegistro)}
         />
       </section>
     </Container>
@@ -180,7 +189,8 @@ const Container = styled.div`
   color: ${({ theme}) => theme.text }; 
   display: grid;
   grid-template: 
-    "header" 100px
+    "header" 100px    
+    "titulo" 100px
     "tipo" 100px
     "totales" 360px
     "calendario" 100px
@@ -188,7 +198,8 @@ const Container = styled.div`
 
     @media ${Device.tablet} {
       grid-template: 
-        "header" 100px
+        "header" 100px        
+        "titulo" 100px
         "tipo" 100px
         "totales" 100px
         "calendario" 100px
@@ -204,6 +215,14 @@ const Container = styled.div`
 
   .tipo {
     grid-area: tipo; 
+    /* background-color: rgba(60, 88, 22, 0.14); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .titulo {
+    grid-area: titulo; 
     /* background-color: rgba(60, 88, 22, 0.14); */
     display: flex;
     align-items: center;

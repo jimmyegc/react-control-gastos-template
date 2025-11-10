@@ -11,7 +11,7 @@ export function CardTotales({ color, total, title, icono }) {
           <b>{<v.iconoFlechabajo />}</b>
         </section>
         <span className="total">
-          {dataUsuarios.moneda} {formatCurrency(total, dataUsuarios.moneda)}
+          {formatCurrency(total, dataUsuarios.moneda)}
         </span>
       </div>
       <div className="contentIcono">
@@ -23,7 +23,7 @@ export function CardTotales({ color, total, title, icono }) {
           icono={icono}
           textColor="#ffffff"
           translateX="-45px"
-          translateY="-15px"
+          translateY="-20px"
         />
       </div>
     </Container>
@@ -32,12 +32,12 @@ export function CardTotales({ color, total, title, icono }) {
 const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.bg};
   border-radius: 25px;
   padding: 20px;
   width: 100%;
-  justify-content: space-between;
-
+  
   .contentTextos {
     display: flex;
     flex-direction: column;
@@ -62,5 +62,6 @@ const Container = styled.div`
 
   .contentIcono {
     display: flex;
+    align-self: center;
   }
 `;

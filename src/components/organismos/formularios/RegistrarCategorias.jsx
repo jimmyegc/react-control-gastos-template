@@ -73,10 +73,21 @@ export function RegistrarCategorias({ onClose, dataSelect, accion }) {
   }
 
   useEffect(() => {
-    if (accion === "Editar") {
-      setEmojiselect(dataSelect.icono);
-      setColor(dataSelect.color);
-    } 
+  const html = document.documentElement;
+  const body = document.body;
+
+  html.style.overflow = "hidden";
+  body.style.overflow = "hidden";
+
+  if (accion === "Editar") {
+    setEmojiselect(dataSelect.icono);
+    setColor(dataSelect.color);
+  } 
+
+  return () => {
+    html.style.overflow = "auto";
+    body.style.overflow = "auto";
+  };
   }, []);
   
   return (

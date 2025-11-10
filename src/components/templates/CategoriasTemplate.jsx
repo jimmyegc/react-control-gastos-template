@@ -12,6 +12,7 @@ import {
   TablaCategorias,
   RegistrarCategorias,
   LottieAnimacion,
+  Titulo,
 } from '../../index'
 
 import vacioverde from "../../assets/vacioverde.json";
@@ -66,6 +67,9 @@ export const CategoriasTemplate = ({ data }) => {
         <Header stateConfig={{ state: openMenu, setState: toggleMenuUser }} />        
       </header>
       <section className='tipo'>
+        <Titulo title="Categorías" align="center" />            
+      </section>      
+      <section className='area2'>
         <ContentFiltros>          
           <div onClick={(e) => e.stopPropagation()}>
             <BtnDesplegable 
@@ -82,10 +86,8 @@ export const CategoriasTemplate = ({ data }) => {
               />
             )}
           </div>
-        </ContentFiltros>         
-        <h1>Categorías</h1>   
-      </section>      
-      <section className='area2'>
+        </ContentFiltros>       
+        
         <ContentFiltro>
           <BtnFiltro 
             funcion={nuevoRegistro}
@@ -94,6 +96,7 @@ export const CategoriasTemplate = ({ data }) => {
             icono={<v.agregar />}
           />
         </ContentFiltro>
+        
       </section>
       <section className='main'>
         {data.length == 0 && (
@@ -150,7 +153,7 @@ const Container = styled.div`
     /* background-color: rgba(77,237,106,0.14); */
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
   }
 
   .main {

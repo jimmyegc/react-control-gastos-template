@@ -11,17 +11,23 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 export function Dona({ datagrafica, data,titulo }) {
   const { dataUsuarios } = useUsuariosStore()
   const { moneda } = dataUsuarios  
-  
-  const style = { width:"400px" }
+    
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: "bottom" },
+    },
+  };
 
   return (
     <Container>
-      <section >
+      <ChartWrapper >
         <Doughnut 
           data={datagrafica} 
-          style={style}
+          options={options}
         />
-      </section>
+      </ChartWrapper>
       <section>
         <h2>{titulo} por categoría</h2>
         {data?.map((item) => {
@@ -30,7 +36,7 @@ export function Dona({ datagrafica, data,titulo }) {
               <div className="contentDescripcion">
                 <span>{item.icono}</span>
                 <span className="descripcion">{item.descripcion}</span>
-              </div>
+              </div>              
               <span>{formatCurrency(item.total, moneda)}</span>
             </ContentCars>
           );
@@ -46,11 +52,22 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+`;
+
+const ChartWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1;
 `;
 
 const ContentCars = styled.div`
   display:flex;
   justify-content: space-between;
+  width: 100%;
 
   .contentDescripcion{
     display: flex;

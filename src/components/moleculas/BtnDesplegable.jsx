@@ -11,8 +11,7 @@ export function BtnDesplegable({ text, bgcolor, textcolor, funcion }) {
   );
 }
 const Container = styled.div`
-  display: flex;
-  
+  display: flex;  
   background-color: ${(props) => props.$bgcolor};
   color: ${(props) => props.$textcolor};
   font-weight: 500;

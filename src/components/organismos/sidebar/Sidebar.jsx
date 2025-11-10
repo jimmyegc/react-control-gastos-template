@@ -28,33 +28,32 @@ export const Sidebar = ({ state, setState }) => {
             <span>Control de Gastos</span>    
           </div>                      
         </div>
-        <div className='MenuSidebar'>
-          
-        {LinksArray.map(({ icon, label, to })=> (
-          <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
-            <NavLink to={to} 
-              className={({ isActive }) => `Links${isActive?` active`: ``}`}
-            >
-              <div className="LinkIcon">{icon}</div>
-              {state && <span>{label}</span>}
-              
-            </NavLink>
-          </div>
-        ))}
-        <Divider />
-        {SecondarylinksArray.map(({ icon, label, to })=> (
-          <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
-            <NavLink to={to} 
-              className={({ isActive }) => `Links${isActive?` active`: ``}`}
-            >
-              <div className="LinkIcon">{icon}</div>
-              {state && <span>{label}</span>}
-              
-            </NavLink>
-          </div>
-        ))}
-        <Divider />
-        {state && (<SidebarCard/>)}        
+        <div className='MenuSidebar'>          
+          {LinksArray.map(({ icon, label, to })=> (
+            <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
+              <NavLink to={to} 
+                className={({ isActive }) => `Links${isActive?` active`: ``}`}
+              >
+                <div className="LinkIcon">{icon}</div>
+                {state && <span>{label}</span>}
+                
+              </NavLink>
+            </div>
+          ))}
+          <Divider />
+          {SecondarylinksArray.map(({ icon, label, to })=> (
+            <div key={label} className={state ? 'LinkContainer active': 'LinkContainer'}>
+              <NavLink to={to} 
+                className={({ isActive }) => `Links${isActive?` active`: ``}`}
+              >
+                <div className="LinkIcon">{icon}</div>
+                {state && <span>{label}</span>}
+                
+              </NavLink>
+            </div>
+          ))}
+          <Divider />
+          {state && (<SidebarCard/>)}        
         </div>            
       </Container>
     </Main>
@@ -82,15 +81,16 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    padding-bottom: 60px;
+    gap: ${({ $isOpen }) => ($isOpen?"10px":"0px")};
             
     .imgContent {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 64px;
+      width: 30px;
       transition: all 0.35s ease;
-      transform: ${({ $isOpen }) => ($isOpen?`scale(0.75)`:`scale(1.15)`)} rotate(${({ theme }) => theme.logorotate});
+      transform: ${({ $isOpen }) => ($isOpen?`scale(1.25)`:`scale(2.5)`)} rotate(${({ theme }) => theme.logorotate});
       padding-bottom: ${({ $isOpen }) => ($isOpen?`0px`:`20px`)}
             
       img {
@@ -168,7 +168,7 @@ const Container = styled.div`
 const Main = styled.div`
   .SidebarButton {
     position: fixed;
-    top: 64px;
+    top: 70px;
     left: 42px;  
     width: 32px;
     height: 32px;

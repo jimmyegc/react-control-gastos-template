@@ -1,18 +1,16 @@
-import isoCountryCurrency from "iso-country-currency";
+export function formatCurrency(value, moneda = "") {
+  if (value === null || value === undefined || value === "") return "—";
 
-export function formatCurrency(value, countryCode, language, withSymbol = true) {
-  try {
-    const info = isoCountryCurrency.getAllInfoByISO(countryCode);
-    const currency = info?.currency || "USD";
-    const locale = language || `${countryCode.toLowerCase()}-${countryCode}`;
+  const numericValue = Number(value);
+  if (isNaN(numericValue)) return "—";
 
-    return new Intl.NumberFormat(locale, {
-      style: withSymbol ? "currency" : "decimal",
-      currency,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(value);
-  } catch {
-    return value.toLocaleString();
-  }
+  const symbol = moneda || "";
+  const locale = navigator.language || "es-MX";
+
+  const formatted = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(numericValue);
+
+  return `${symbol} ${formatted}`;
 }

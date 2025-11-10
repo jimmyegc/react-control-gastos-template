@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import styled from 'styled-components'
 import { 
   Header,
+  Titulo,
   CalendarioLineal,
   Tabs,
   ContentFiltros,
@@ -58,7 +59,7 @@ export const InformesTemplate = () => {
             )}
           </div>
         </ContentFiltros>    
-        <h1>Informes</h1>
+        <Titulo title="Informes" />        
       </section>      
       <section className='area2'>
         <CalendarioLineal 
@@ -78,6 +79,7 @@ export const InformesTemplate = () => {
 const Container = styled.div`
   min-height: 100vh;
   padding: 15px;  
+  overflow-x: hidden;
   width: 100%;  
   background: ${({ theme}) => theme.bgtotal };
   color: ${({ theme}) => theme.text }; 
@@ -90,14 +92,14 @@ const Container = styled.div`
 
   .header {
     grid-area: header; 
-    /* background-color: rgba(103,93,241,0.14);  */
+    /* background-color: rgba(103,93,241,0.14); */
     display: flex;
     align-items: center;
   }
 
   .area1 {
     grid-area: area1;
-    /* background-color: rgba(229,67,26,0.14);  */
+    /* background-color: rgba(229,67,26,0.14); */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -105,16 +107,16 @@ const Container = styled.div`
 
   .area2 {
     grid-area: area2;
-    /* background-color: rgba(77,237,106,0.14);  */
+    /* background-color: rgba(77,237,106,0.14);*/
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
   
   .main {
-    grid-area: main;
-    /* background-color: rgba(179,46,241,0.14); */
-    padding-bottom: 20px;
+    grid-area: main;    
+    /*background-color: rgba(179,46,241,0.14);*/
+    //padding-bottom: 20px;
   }
 `

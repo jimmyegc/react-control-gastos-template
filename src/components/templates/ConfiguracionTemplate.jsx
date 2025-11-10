@@ -9,7 +9,8 @@ import {
   ListaGenerica, 
   TemasData, 
   BtnSave,
-  CardEliminarData
+  CardEliminarData,
+  Titulo
 } from '../../index'
 
 export const ConfiguracionTemplate = () => {
@@ -49,9 +50,9 @@ export const ConfiguracionTemplate = () => {
       <header className='header'>
         <Header stateConfig={{ state: openMenu, setState: () => setOpenMenu(!openMenu) }} />        
       </header>      
-      <section className='area2'>
-        <h1>Ajustes</h1>        
-        <ContentCard>
+      <section className='area2'>      
+        <Titulo title="Ajustes" align="center" />          
+        <ContentCard>          
           <span>Moneda:</span>
           <Selector            
             state={stateListaPaises}

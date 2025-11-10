@@ -12,8 +12,7 @@ import {
   InputText,
   useCuentaStore,
   v,
-  BtnSave,
-  useUsuariosStore,  
+  BtnSave,   
 } from "../../../index";
 
 export function RegistrarMovimientos({ setState, state, dataSelect, accion }) {
@@ -30,6 +29,7 @@ export function RegistrarMovimientos({ setState, state, dataSelect, accion }) {
   const [ignorar, setIgnorar] = useState(false);
   const [stateCategorias, setStateCategorias] = useState(false);
   const fechaactual = new Date();
+
   const {
     register,
     formState: { errors },
@@ -52,8 +52,7 @@ export function RegistrarMovimientos({ setState, state, dataSelect, accion }) {
       id_categoria: categoriaItemSelect.id,
     };
 
-
-    try {
+    try {      
       await insertarMovimientos(p);
       setState();
     } catch (err) {
@@ -65,12 +64,15 @@ export function RegistrarMovimientos({ setState, state, dataSelect, accion }) {
   }
 
   useEffect(() => {
-    // Al montar el modal → bloquear scroll
-    document.body.style.overflow = "hidden";
+    const html = document.documentElement;
+    const body = document.body;
 
-    // Al desmontar el modal → restaurar scroll
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
     return () => {
-      document.body.style.overflow = "auto";
+      html.style.overflow = "auto";
+      body.style.overflow = "auto";
     };
   }, []);
 
@@ -84,7 +86,8 @@ export function RegistrarMovimientos({ setState, state, dataSelect, accion }) {
       >
         <div className="encabezado">
           <div>
-            <h1>Nuevo {tipo == "i" ? "ingreso" : "gasto"}</h1>
+            <h1>
+              {accion} {tipo == "i" ? "ingreso" : "gasto"}</h1>
           </div>
           <div>
             <span onClick={setState}>{<v.iconocerrar />}</span>
@@ -142,6 +145,7 @@ export function RegistrarMovimientos({ setState, state, dataSelect, accion }) {
                 texto1={categoriaItemSelect?.icono}
                 texto2={categoriaItemSelect?.descripcion}
                 funcion={() => setStateCategorias(!stateCategorias)}
+                
               />
             </ContainerCategoria>
           </section>

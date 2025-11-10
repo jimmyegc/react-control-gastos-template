@@ -21,18 +21,22 @@ export const useMovimientosStore = create((set, get) => ({
     set({ datamovimientos: response });
     return response;
   },
-  calcularTotales: (response) => {
-    if (!Array.isArray(response)) return;
-
+  calcularTotales: (response = []) => {
     let total = 0;
     let totalPagados = 0;
     let totalPendientes = 0;
 
-    for (const { valor, estado } of response) {
-      total += valor;
-      if (estado === 1) totalPagados += valor;
-      else if (estado === 0) totalPendientes += valor;
+    for (const item of response) {
+      const monto = Object.values(item)[2];
+      total += monto;      
+      //console.log("estado:" + typeof item.estado + " monto:" + monto);
+      if (item.estado == 1) totalPagados += monto;
+      else if (item.estado == 0) totalPendientes += monto;
     }
+    
+    /*console.log("totalPendientes", totalPendientes);
+    console.log("totalPagados", totalPagados);
+    console.log("total", total); */ 
 
     set({
       totalMesAño: total,
@@ -40,10 +44,8 @@ export const useMovimientosStore = create((set, get) => ({
       totalMesAñoPendientes: totalPendientes,
     });
   },
-  insertarMovimientos: async (p) => {
-    console.log('insertarMovimientos', p)
+  insertarMovimientos: async (p) => {    
     await InsertarMovimientos(p);
-
     const { mostrarMovimientos } = get();
     const { parametros } = get();
     set(mostrarMovimientos(parametros));

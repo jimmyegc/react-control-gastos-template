@@ -7,7 +7,8 @@ import {
   InputImage,
   InputText,
   BtnSave,
-  v,  
+  v,
+  Titulo,  
 } from '../../index'
 import { supabase } from "../../supabase/supabase.config";
 import { useForm } from 'react-hook-form';
@@ -104,7 +105,7 @@ export const MiPerfilTemplate = () => {
         <Header stateConfig={{ state: openMenu, setState: () => setOpenMenu(!openMenu) }} />        
       </header>
       <section className='area1'>        
-        <h1>Mi Perfil</h1>               
+        <Titulo title="Mi Perfil" align="center" />             
       </section>      
       <section className='area2'>          
         <form className="perfil-container"  onSubmit={handleSubmit(onSubmit)}>

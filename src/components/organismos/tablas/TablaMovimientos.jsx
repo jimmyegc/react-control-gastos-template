@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
   ContentAccionesTabla,
-  useCategoriasStore,
+  useMovimientosStore,  
   Paginacion,
 } from "../../../index";
 import Swal from "sweetalert2";
@@ -9,17 +9,19 @@ import { v } from "../../../styles/variables";
 import { useState } from "react";
 export function TablaMovimientos({
   data,
-  SetopenRegistro,
-  setdataSelect,
+  setOpenRegistro,
+  setDataSelect,
   setAccion,
 }) {
- if(data?.length == 0) return;
+  if(data?.length == 0) return;
+
   const [pagina, setPagina] = useState(1);
   const [porPagina, setPorPagina] = useState(10);
   const mx = data?.length / porPagina;
   const maximo = mx < 1 ? 1 : mx;
 
-  const { eliminarCategoria } = useCategoriasStore();
+  const { eliminarMovimiento } = useMovimientosStore();
+
   function eliminar(p) {
     Swal.fire({
       title: "¿Estás seguro(a)(e)?",
@@ -32,15 +34,17 @@ export function TablaMovimientos({
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await eliminarCategoria({ id: p.id, idusuario: p.idusuario });
+        await eliminarMovimiento({ id: p.id });
       }
     });
   }
+
   function editar(data) {
-    SetopenRegistro(true);
-    setdataSelect(data);
+    setOpenRegistro(true);
+    setDataSelect(data);
     setAccion("Editar");
   }
+
   return (
     <>
       <Container>
@@ -76,8 +80,7 @@ export function TablaMovimientos({
                     <td data-title="Cuenta">{item.cuenta}</td>
                     <td data-title="Monto">{item.valorymoneda}</td>
                     <td data-title="Acciones">
-                      <ContentAccionesTabla
-                        funcionEditar={() => editar(item)}
+                      <ContentAccionesTabla                        
                         funcionEliminar={() => eliminar(item)}
                       />
                     </td>

@@ -16,8 +16,7 @@ export const ListaPaises = ({ setSelect, setState }) => {
     let filtrado = isoCodigos.filter((item) => {
       return item.countryName == ConvertirCapitalize(e.target.value)
     })
-    setDataResult(filtrado)
-    console.log(filtrado)
+    setDataResult(filtrado)    
   }
 
   return (
