@@ -37,20 +37,16 @@ Permite llevar un control inteligente de tus ingresos y egresos, generar reporte
 
 ## 📊 Capturas de pantalla
 
-| Dashboard                              | Modo oscuro                            |
-| -------------------------------------- | -------------------------------------- |
+| Dashboard                                        | Modo oscuro                                      |
+| ------------------------------------------------ | ------------------------------------------------ |
 | ![Informes](screenshots/informes-light-mode.png) | ![Dark Mode](screenshots/informes-dark-mode.png) |
 
 ---
 
-## 🚀 Próximas mejoras
+## 🧠 Sobre Kiiro
 
-- 📱 Adaptación completa para móviles.
-- 🧩 Exportar reportes a PDF o Excel.
-- 🔔 Recordatorios automáticos de gastos recurrentes.
-- 💾 Sincronización con APIs de cuentas bancarias.
-
----
+> “Kiiro” significa _amarillo_ en japonés 🌕 — un color asociado con la energía, el equilibrio y la prosperidad.
+> Esta aplicación busca ayudarte a alcanzar ese equilibrio financiero con una interfaz limpia, moderna y eficiente.
 
 ## 👨‍💻 Autor
 
@@ -60,19 +56,14 @@ Desarrollado por **Jimmy García** basandome en el curso "Sistema para el contro
 🐙 [GitHub](https://github.com/jimmyegc)
 📄 [Udemy](https://www.udemy.com/course/sistema-para-el-control-de-gastos-con-reactjs-y-postgresql/?couponCode=CERDYNREACT)
 
+## 🚀 Próximas mejoras
+
+- 📱 Adaptación completa para móviles.
+- 🧩 Exportar reportes a PDF o Excel.
+- 🔔 Recordatorios automáticos de gastos recurrentes.
+- 💾 Sincronización con APIs de cuentas bancarias.
+
 ---
-
-## 🧠 Sobre Kiiro
-
-> “Kiiro” significa _amarillo_ en japonés 🌕 — un color asociado con la energía, el equilibrio y la prosperidad.
-> Esta aplicación busca ayudarte a alcanzar ese equilibrio financiero con una interfaz limpia, moderna y eficiente.
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia **MIT**.
-Consulta el archivo [LICENSE](./LICENSE) para más información.
 
 ## ⚙️ Configuración local
 
@@ -129,11 +120,10 @@ Para evitar errores por el escaneo de secretos, crea un archivo `netlify.toml` e
 
 Esto le indica a Netlify que ignore las variables de entorno públicas de Supabase durante el proceso de build.
 
----
 
-
-
-```
-
-```
 ````
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**.
+Consulta el archivo [LICENSE](./LICENSE) para más información.
