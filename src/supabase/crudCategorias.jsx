@@ -21,7 +21,7 @@ export const InsertarCategorias = async (p) => {
         icon: 'success',
         title: 'Datos guardados',
         showConfirmButton: false, 
-        timmer: 2500
+        timer: 1500
       })
     }    
   } catch(error) {
@@ -87,7 +87,7 @@ export async function EliminarCategoriasTodas(p) {
       icon: "success",
       title: "Datos reseteados",
       showConfirmButton: false,
-      timer: 1000,
+      timer: 1500,
     });
   } catch (error) {
     alert(error.error_description || error.message + " eliminar categorias");

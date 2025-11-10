@@ -2,10 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { BiUserCircle } from 'react-icons/bi'
-import { BtnCircular, UserAuth, v, ListaMenuDesplegable, DesplegableUser, useAuthStore } from '../../index'
+import { 
+  BtnCircular, 
+  UserAuth, 
+  v, 
+  ListaMenuDesplegable, 
+  DesplegableUser, 
+  useAuthStore,
+  useUsuariosStore,
+} from '../../index'
 
 export const DataUser = ({ stateConfig }) => {
-  const { user } = UserAuth();
+  //const { user } = UserAuth();
+  const { dataUsuarios: user } = useUsuariosStore();  
   const { signOut } = useAuthStore();
   const navigate = useNavigate()
 
@@ -14,8 +23,9 @@ export const DataUser = ({ stateConfig }) => {
   const funcionXtipo = async (tipo) => {    
     if (tipo === 'miperfil') {
       navigate('/perfil')
-    } else 
-    if (tipo === 'cerrarsesion') {
+    } else if (tipo === 'configuracion') {
+      navigate('/configuracion');
+    } else if (tipo === 'cerrarsesion') {
       await signOut();
     }
   };
@@ -23,8 +33,8 @@ export const DataUser = ({ stateConfig }) => {
   return (
     <Container onClick={stateConfig.setState}>            
       <div className='imgContainer'>
-        {user?.picture ? (
-          <img src={user.picture} alt="Foto de usuario" />
+        {user?.foto ? (
+          <img src={user.foto} alt="Foto de usuario" />
         ) : (
           <BiUserCircle className="iconUser" />
         )}
@@ -41,7 +51,7 @@ export const DataUser = ({ stateConfig }) => {
         translateY="-12px"
       />
 
-      <span className='nombre'>{user?.name || 'Usuario'}</span>
+      <span className='nombre'>{user?.nombres || 'Usuario'}</span>
 
       {stateConfig.state && (
         <ListaMenuDesplegable 

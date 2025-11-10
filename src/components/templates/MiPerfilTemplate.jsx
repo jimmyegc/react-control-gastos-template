@@ -13,7 +13,7 @@ import { supabase } from "../../supabase/supabase.config";
 import { useForm } from 'react-hook-form';
 
 export const MiPerfilTemplate = () => {
-  const { id_usuario, id_auth_supabase } = useUsuariosStore()
+  const { id_usuario, id_auth_supabase, mostrarUsuarios } = useUsuariosStore()
   const [openMenu, setOpenMenu] = useState(false)  
   const [uploading, setUploading] = useState(false);
 
@@ -84,13 +84,15 @@ export const MiPerfilTemplate = () => {
 
     const { error } = await supabase.from("usuarios").upsert(updates);
     if (error) console.error(error);
-    else 
+    else {
+      mostrarUsuarios()
       Swal.fire({     
         icon: "success",
         title: "Perfil actualizado",
         showConfirmButton: false,
         timer: 1500,
-      });      
+      }); 
+    }     
   };
 
   const fotoActual = watch("foto"); 

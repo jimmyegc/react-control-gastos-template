@@ -49,7 +49,7 @@ export const EditarTemaMonedaUser = async (p) => {
         icon: 'success',
         title: 'Datos modificados',
         showConfirmButton: false,
-        timer: 2500
+        timer: 1500
       })
     }
   } catch(error) {

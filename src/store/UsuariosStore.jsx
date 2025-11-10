@@ -20,5 +20,5 @@ export const useUsuariosStore =  create((set, get) => ({
     await EditarTemaMonedaUser(p)
     const {mostrarUsuarios} = get();
     set(mostrarUsuarios)
-  }
+  },
 }))
