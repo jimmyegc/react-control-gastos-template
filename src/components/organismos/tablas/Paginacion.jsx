@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { v } from "../../../styles/variables";
 import styled from "styled-components";
+import { v } from "../../../styles/variables";
 import { useOperaciones } from "../../../index";
+
 export const Paginacion = ({ pagina, setPagina, maximo }) => {
   const { bgCategoria, colorCategoria } = useOperaciones();
   const [input, setInput] = useState(1);
@@ -21,15 +22,14 @@ export const Paginacion = ({ pagina, setPagina, maximo }) => {
   };
 
   return (
-    <Container $bgCategoria={bgCategoria} $colorCategoria={colorCategoria}>
+    <Container $bgCategoria={bgCategoria} $colorCategoria={colorCategoria}>      
       <button onClick={inicio}>
         <span>{<v.iconotodos />}</span>
       </button>
       <button disabled={pagina === 1 || pagina < 1} onClick={previousPage}>
         <span className="iconoIzquierda">{<v.iconoflechaderecha />}</span>
       </button>
-      <span>{input}</span>
-      <p> de {Math.round(maximo)} </p>
+      <p>Página {pagina} / {maximo}</p>
       <button
         disabled={pagina === Math.ceil(maximo) || pagina > Math.ceil(maximo)}
         onClick={nextPage}

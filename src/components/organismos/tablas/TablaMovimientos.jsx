@@ -7,19 +7,19 @@ import {
 import Swal from "sweetalert2";
 import { v } from "../../../styles/variables";
 import { useState } from "react";
+
 export function TablaMovimientos({
   data,
   setOpenRegistro,
   setDataSelect,
   setAccion,
 }) {
+
   if(data?.length == 0) return;
 
   const [pagina, setPagina] = useState(1);
-  const [porPagina, setPorPagina] = useState(10);
-  const mx = data?.length / porPagina;
-  const maximo = mx < 1 ? 1 : mx;
-
+  const [porPagina, setPorPagina] = useState(10);  
+  const maximo = Math.ceil(data?.length / porPagina) || 1;
   const { eliminarMovimiento } = useMovimientosStore();
 
   function eliminar(p) {
