@@ -1,4 +1,3 @@
-````markdown
 # 💸 Kiiro – Control de Gastos
 
 ![Kiiro App](image.png)
