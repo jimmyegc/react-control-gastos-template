@@ -6,8 +6,8 @@ export const BtnCircular = ({ icono, width, height, bgcolor, textColor, fontsize
     <Container
       $bgcolor={bgcolor}
       $textColor={textColor}
-      height={height}
-      width={width}
+      $height={height}
+      $width={width}
       $fontsize={fontsize}
       $translateX={translateX}
       $translateY={translateY}
@@ -19,9 +19,9 @@ export const BtnCircular = ({ icono, width, height, bgcolor, textColor, fontsize
 
 
 const Container = styled.button`
-  background: ${(props) => props.$bgcolor };
-  min-width: ${(props) => props.width };
-  min-height: ${(props) => props.height };
+  background: ${(props) => props.$bgcolor };  
+  min-width: ${(props) => props.$width };
+  min-height: ${(props) => props.$height };
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -29,11 +29,11 @@ const Container = styled.button`
   position: absolute;
   transform: translateX(${(props) => props.$translateX}) translateY(${(props) => props.$translateY});
   border: none;
-  //border: 2px solid #fff;
-  
-  span {
-    font-size: ${(props) => props.$fontsize };
-    text-align: center;
+    
+  span {        
+    font-size: ${(props) => props.$fontsize };    
     color: ${(props) => props.$textColor };
+    display: flex;
+    align-items: center;
   }
 `

@@ -19,11 +19,11 @@ export function CardTotales({ color, total, title, icono }) {
           height="50px"
           width="50px"
           bgcolor={color}
-          fontsize="25px"
+          fontsize="1.75rem"
           icono={icono}
           textColor="#ffffff"
           translateX="-45px"
-          translateY="-20px"
+          translateY="-25px"
         />
       </div>
     </Container>
