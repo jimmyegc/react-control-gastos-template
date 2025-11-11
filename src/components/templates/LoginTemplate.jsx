@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { BtnSave, v, useAuthStore } from '../../index'
+import { 
+  BtnSave, 
+  v, 
+  useAuthStore,
+  KiiroLogo,
+} from '../../index'
 
 export const LoginTemplate = () => {
   const { signInWithGoogle } = useAuthStore()
@@ -8,8 +13,8 @@ export const LoginTemplate = () => {
     <Container $imagenfondo={v.imagenfondo}>
       <div className='contentCard'>
         <span className='version'>versión 1.0</span>
-        <div className='contentImg'>
-          <img src={v.logo} alt="" />
+        <div className='contentImg'>          
+          <KiiroLogo height='240px' width='240px' />
         </div>      
         <Titulo>Control de Gastos</Titulo>
         <p className='frase'>Tome el control de tus 💸 gastos e 💰 ingresos.</p>      
@@ -58,8 +63,9 @@ const Container = styled.div`
       width: 100%;
       display: flex;
       justify-content: center;
+
       img {
-        width: 35%;
+        width: 100%;
         animation: flotar 1.5s ease-in-out infinite alternate;
       }
     }
